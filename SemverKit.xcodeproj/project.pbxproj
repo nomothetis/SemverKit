@@ -8,8 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		7D3A7C3319C7631700346D07 /* SemverKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D3A7C3219C7631700346D07 /* SemverKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7D3A7C3D19C7631700346D07 /* SemverKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3A7C3C19C7631700346D07 /* SemverKitTests.swift */; };
+		7D3A7C3D19C7631700346D07 /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3A7C3C19C7631700346D07 /* CoreTests.swift */; };
+		7D3A7C4719C7634800346D07 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3A7C4619C7634800346D07 /* Core.swift */; };
+		7D3A7C4919C763B600346D07 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3A7C4819C763B600346D07 /* Result.swift */; };
+		7D3A7C4B19C7646500346D07 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3A7C4A19C7646500346D07 /* Regex.swift */; };
+		7D3A7C4F19C7827800346D07 /* Increment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3A7C4E19C7827800346D07 /* Increment.swift */; };
+		7D3A7C5119C783CC00346D07 /* IncrementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3A7C5019C783CC00346D07 /* IncrementTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7D3A7C4C19C77F8400346D07 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7D3A7C2419C7631600346D07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7D3A7C2C19C7631700346D07;
+			remoteInfo = SemverKit;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		7D3A7C2D19C7631700346D07 /* SemverKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SemverKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -17,7 +32,12 @@
 		7D3A7C3219C7631700346D07 /* SemverKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SemverKit.h; sourceTree = "<group>"; };
 		7D3A7C3819C7631700346D07 /* SemverKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SemverKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D3A7C3B19C7631700346D07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7D3A7C3C19C7631700346D07 /* SemverKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemverKitTests.swift; sourceTree = "<group>"; };
+		7D3A7C3C19C7631700346D07 /* CoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTests.swift; sourceTree = "<group>"; };
+		7D3A7C4619C7634800346D07 /* Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
+		7D3A7C4819C763B600346D07 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		7D3A7C4A19C7646500346D07 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
+		7D3A7C4E19C7827800346D07 /* Increment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Increment.swift; sourceTree = "<group>"; };
+		7D3A7C5019C783CC00346D07 /* IncrementTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncrementTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +81,10 @@
 			children = (
 				7D3A7C3219C7631700346D07 /* SemverKit.h */,
 				7D3A7C3019C7631700346D07 /* Supporting Files */,
+				7D3A7C4619C7634800346D07 /* Core.swift */,
+				7D3A7C4819C763B600346D07 /* Result.swift */,
+				7D3A7C4A19C7646500346D07 /* Regex.swift */,
+				7D3A7C4E19C7827800346D07 /* Increment.swift */,
 			);
 			path = SemverKit;
 			sourceTree = "<group>";
@@ -76,7 +100,8 @@
 		7D3A7C3919C7631700346D07 /* SemverKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				7D3A7C3C19C7631700346D07 /* SemverKitTests.swift */,
+				7D3A7C3C19C7631700346D07 /* CoreTests.swift */,
+				7D3A7C5019C783CC00346D07 /* IncrementTests.swift */,
 				7D3A7C3A19C7631700346D07 /* Supporting Files */,
 			);
 			path = SemverKitTests;
@@ -133,6 +158,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				7D3A7C4D19C77F8400346D07 /* PBXTargetDependency */,
 			);
 			name = SemverKitTests;
 			productName = SemverKitTests;
@@ -196,6 +222,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D3A7C4919C763B600346D07 /* Result.swift in Sources */,
+				7D3A7C4719C7634800346D07 /* Core.swift in Sources */,
+				7D3A7C4F19C7827800346D07 /* Increment.swift in Sources */,
+				7D3A7C4B19C7646500346D07 /* Regex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,11 +233,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D3A7C3D19C7631700346D07 /* SemverKitTests.swift in Sources */,
+				7D3A7C3D19C7631700346D07 /* CoreTests.swift in Sources */,
+				7D3A7C5119C783CC00346D07 /* IncrementTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7D3A7C4D19C77F8400346D07 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7D3A7C2C19C7631700346D07 /* SemverKit */;
+			targetProxy = 7D3A7C4C19C77F8400346D07 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		7D3A7C3E19C7631700346D07 /* Debug */ = {
@@ -298,6 +337,7 @@
 		7D3A7C4119C7631700346D07 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -307,12 +347,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		7D3A7C4219C7631700346D07 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
