@@ -33,9 +33,9 @@ operations.
 In addition to supporting basic comparison of versions, SemverKit also includes support for
 incrementing versions in a consistent manner. A number of methods are defined to support:
 
-* Incrementing normal versions (patch, minor, major).
+* Incrementing normal versions (patch, minor, major)
 * Incrementing pre-release versions (to pre-release alpha and beta versions and to normal versions)
-* Stabilizing a version.
+* Stabilizing a version
 
 All these methods are prefixed with `next*`, and their return values are uniquely defined. 
 For instance, `nextMajorAlphaVersion` defines what it returns as:
