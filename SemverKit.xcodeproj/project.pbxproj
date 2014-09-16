@@ -9,18 +9,18 @@
 /* Begin PBXBuildFile section */
 		7D3A7C3319C7631700346D07 /* SemverKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D3A7C3219C7631700346D07 /* SemverKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7D3A7C3D19C7631700346D07 /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3A7C3C19C7631700346D07 /* CoreTests.swift */; };
-		7D3A7C4719C7634800346D07 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3A7C4619C7634800346D07 /* Core.swift */; };
-		7D3A7C4919C763B600346D07 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3A7C4819C763B600346D07 /* Result.swift */; };
-		7D3A7C4B19C7646500346D07 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3A7C4A19C7646500346D07 /* Regex.swift */; };
-		7D3A7C4F19C7827800346D07 /* Increment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3A7C4E19C7827800346D07 /* Increment.swift */; };
 		7D3A7C5119C783CC00346D07 /* IncrementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3A7C5019C783CC00346D07 /* IncrementTests.swift */; };
 		7D3A7C5C19C873BE00346D07 /* SemverKit-OSX.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D3A7C5B19C873BE00346D07 /* SemverKit-OSX.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7D3A7C6D19C886A400346D07 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3A7C4619C7634800346D07 /* Core.swift */; };
-		7D3A7C6E19C886A800346D07 /* Increment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3A7C4E19C7827800346D07 /* Increment.swift */; };
-		7D3A7C6F19C886AC00346D07 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3A7C4A19C7646500346D07 /* Regex.swift */; };
-		7D3A7C7019C886B000346D07 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3A7C4819C763B600346D07 /* Result.swift */; };
 		7D3A7C7119C886D100346D07 /* IncrementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3A7C5019C783CC00346D07 /* IncrementTests.swift */; };
 		7D3A7C7219C886D500346D07 /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3A7C3C19C7631700346D07 /* CoreTests.swift */; };
+		7D44C4AC19C8C82E0063E49F /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D44C4A819C8C82E0063E49F /* Core.swift */; };
+		7D44C4AD19C8C82E0063E49F /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D44C4A819C8C82E0063E49F /* Core.swift */; };
+		7D44C4AE19C8C82E0063E49F /* Increment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D44C4A919C8C82E0063E49F /* Increment.swift */; };
+		7D44C4AF19C8C82E0063E49F /* Increment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D44C4A919C8C82E0063E49F /* Increment.swift */; };
+		7D44C4B019C8C82E0063E49F /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D44C4AA19C8C82E0063E49F /* Regex.swift */; };
+		7D44C4B119C8C82E0063E49F /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D44C4AA19C8C82E0063E49F /* Regex.swift */; };
+		7D44C4B219C8C82E0063E49F /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D44C4AB19C8C82E0063E49F /* Result.swift */; };
+		7D44C4B319C8C82E0063E49F /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D44C4AB19C8C82E0063E49F /* Result.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,16 +40,16 @@
 		7D3A7C3819C7631700346D07 /* SemverKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SemverKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D3A7C3B19C7631700346D07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D3A7C3C19C7631700346D07 /* CoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTests.swift; sourceTree = "<group>"; };
-		7D3A7C4619C7634800346D07 /* Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
-		7D3A7C4819C763B600346D07 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		7D3A7C4A19C7646500346D07 /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
-		7D3A7C4E19C7827800346D07 /* Increment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Increment.swift; sourceTree = "<group>"; };
 		7D3A7C5019C783CC00346D07 /* IncrementTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncrementTests.swift; sourceTree = "<group>"; };
 		7D3A7C5719C873BE00346D07 /* SemverKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SemverKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D3A7C5A19C873BE00346D07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7D3A7C5B19C873BE00346D07 /* SemverKit-OSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SemverKit-OSX.h"; sourceTree = "<group>"; };
 		7D3A7C6119C873BE00346D07 /* SemverKit-OSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SemverKit-OSXTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D3A7C6419C873BE00346D07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D44C4A819C8C82E0063E49F /* Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
+		7D44C4A919C8C82E0063E49F /* Increment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Increment.swift; sourceTree = "<group>"; };
+		7D44C4AA19C8C82E0063E49F /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
+		7D44C4AB19C8C82E0063E49F /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +87,7 @@
 		7D3A7C2319C7631600346D07 = {
 			isa = PBXGroup;
 			children = (
+				7D44C4A719C8C6420063E49F /* Common */,
 				7D3A7C2F19C7631700346D07 /* SemverKit */,
 				7D3A7C3919C7631700346D07 /* SemverKitTests */,
 				7D3A7C5819C873BE00346D07 /* SemverKit-OSX */,
@@ -111,8 +112,6 @@
 			children = (
 				7D3A7C3219C7631700346D07 /* SemverKit.h */,
 				7D3A7C3019C7631700346D07 /* Supporting Files */,
-				7D3A7C4619C7634800346D07 /* Core.swift */,
-				7D3A7C4E19C7827800346D07 /* Increment.swift */,
 			);
 			path = SemverKit;
 			sourceTree = "<group>";
@@ -120,8 +119,6 @@
 		7D3A7C3019C7631700346D07 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				7D3A7C4A19C7646500346D07 /* Regex.swift */,
-				7D3A7C4819C763B600346D07 /* Result.swift */,
 				7D3A7C3119C7631700346D07 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -176,6 +173,17 @@
 				7D3A7C6419C873BE00346D07 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7D44C4A719C8C6420063E49F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				7D44C4A819C8C82E0063E49F /* Core.swift */,
+				7D44C4A919C8C82E0063E49F /* Increment.swift */,
+				7D44C4AA19C8C82E0063E49F /* Regex.swift */,
+				7D44C4AB19C8C82E0063E49F /* Result.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,10 +358,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D3A7C4919C763B600346D07 /* Result.swift in Sources */,
-				7D3A7C4719C7634800346D07 /* Core.swift in Sources */,
-				7D3A7C4F19C7827800346D07 /* Increment.swift in Sources */,
-				7D3A7C4B19C7646500346D07 /* Regex.swift in Sources */,
+				7D44C4AC19C8C82E0063E49F /* Core.swift in Sources */,
+				7D44C4AE19C8C82E0063E49F /* Increment.swift in Sources */,
+				7D44C4B219C8C82E0063E49F /* Result.swift in Sources */,
+				7D44C4B019C8C82E0063E49F /* Regex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,10 +378,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D3A7C6D19C886A400346D07 /* Core.swift in Sources */,
-				7D3A7C6E19C886A800346D07 /* Increment.swift in Sources */,
-				7D3A7C7019C886B000346D07 /* Result.swift in Sources */,
-				7D3A7C6F19C886AC00346D07 /* Regex.swift in Sources */,
+				7D44C4AD19C8C82E0063E49F /* Core.swift in Sources */,
+				7D44C4AF19C8C82E0063E49F /* Increment.swift in Sources */,
+				7D44C4B319C8C82E0063E49F /* Result.swift in Sources */,
+				7D44C4B119C8C82E0063E49F /* Regex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
