@@ -39,7 +39,7 @@ incrementing versions in a consistent manner. A number of methods are defined to
 * Incrementing pre-release versions (to other pre-release and to stable versions)
 * Stabilizing a version.
 
-All these methods are prefixed with `next\*`, and have a precise definition attached. For
+All these methods are prefixed with `next*`, and have a precise definition attached. For
 instance, `nextAlphaPatchVersion` specifically defines what it returns as:
 
 > The next major alpha version of version `v1` is defined as the smallest version `v2 > v1` with:
