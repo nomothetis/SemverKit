@@ -717,13 +717,13 @@ class IncrementTests : XCTestCase {
         
     }
     
-    func testStableVersion() {
+    func testNextStableVersion() {
         // If we're already stable, we shoudl still be stable.
         var str = "2.0.0"
         switch parseVersion(str) {
         case .Success(let box):
             let version = box.value
-            let nextVersion = box.value.stableVersion()
+            let nextVersion = box.value.nextStableVersion()
             let finalErrStr = "for next patch alpha version of \"\(str)\"."
             XCTAssertEqual(nextVersion.major, 2, "Incorrect major version \(finalErrStr)")
             XCTAssertEqual(nextVersion.minor, 0, "Incorrect minor version \(finalErrStr)")
@@ -738,7 +738,7 @@ class IncrementTests : XCTestCase {
         switch parseVersion(str) {
         case .Success(let box):
             let version = box.value
-            let nextVersion = box.value.stableVersion()
+            let nextVersion = box.value.nextStableVersion()
             let finalErrStr = "for next patch alpha version of \"\(str)\"."
             XCTAssertEqual(nextVersion.major, 3, "Incorrect major version \(finalErrStr)")
             XCTAssertEqual(nextVersion.minor, 1, "Incorrect minor version \(finalErrStr)")
@@ -753,7 +753,7 @@ class IncrementTests : XCTestCase {
         switch parseVersion(str) {
         case .Success(let box):
             let version = box.value
-            let nextVersion = box.value.stableVersion()
+            let nextVersion = box.value.nextStableVersion()
             let finalErrStr = "for next patch alpha version of \"\(str)\"."
             XCTAssertEqual(nextVersion.major, 19, "Incorrect major version \(finalErrStr)")
             XCTAssertEqual(nextVersion.minor, 7, "Incorrect minor version \(finalErrStr)")
@@ -770,7 +770,7 @@ class IncrementTests : XCTestCase {
         switch parseVersion(str) {
         case .Success(let box):
             let version = box.value
-            let nextVersion = box.value.stableVersion()
+            let nextVersion = box.value.nextStableVersion()
             let finalErrStr = "for next patch alpha version of \"\(str)\"."
             XCTAssertEqual(nextVersion.major, 2, "Incorrect major version \(finalErrStr)")
             XCTAssertEqual(nextVersion.minor, 0, "Incorrect minor version \(finalErrStr)")
@@ -785,7 +785,7 @@ class IncrementTests : XCTestCase {
         switch parseVersion(str) {
         case .Success(let box):
             let version = box.value
-            let nextVersion = box.value.stableVersion()
+            let nextVersion = box.value.nextStableVersion()
             let finalErrStr = "for next patch alpha version of \"\(str)\"."
             XCTAssertEqual(nextVersion.major, 3, "Incorrect major version \(finalErrStr)")
             XCTAssertEqual(nextVersion.minor, 1, "Incorrect minor version \(finalErrStr)")
@@ -800,7 +800,7 @@ class IncrementTests : XCTestCase {
         switch parseVersion(str) {
         case .Success(let box):
             let version = box.value
-            let nextVersion = box.value.stableVersion()
+            let nextVersion = box.value.nextStableVersion()
             let finalErrStr = "for next patch alpha version of \"\(str)\"."
             XCTAssertEqual(nextVersion.major, 19, "Incorrect major version \(finalErrStr)")
             XCTAssertEqual(nextVersion.minor, 7, "Incorrect minor version \(finalErrStr)")

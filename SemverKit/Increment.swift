@@ -285,7 +285,7 @@ extension Version {
     
     :return: the stabilized version.
     */
-    public func stableVersion() -> Version {
+    public func nextStableVersion() -> Version {
         return Version(major: self.major, minor: self.minor, patch: self.patch, preRelease: PreReleaseInfo.None)
     }
 
