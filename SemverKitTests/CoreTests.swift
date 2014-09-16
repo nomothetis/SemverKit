@@ -6,7 +6,6 @@
 //  Copyright (c) 2014 nomothetis. All rights reserved.
 //
 
-import UIKit
 import XCTest
 import SemverKit
 

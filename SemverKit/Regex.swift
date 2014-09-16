@@ -26,7 +26,7 @@ prefix func /(pattern:String) -> NSRegularExpression {
     
     return NSRegularExpression(pattern:pattern,
         options:options,
-        error:nil)
+        error:nil)!
 }
 
 /**
