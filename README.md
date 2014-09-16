@@ -17,9 +17,9 @@ let result2 = parseVersion("a.0.2-alpha.3") // { Failure String "a.0.2" could no
 
 The parser returns a `Result` type, an enum that is either a `Success` or a `Failure`,
 depending on whether or not the parsing was successful. Upon failure, a message describes
-the source of the error. A successful parse contains the core type of the library: a Version.
+the source of the error. A successful parse contains the core type of the library: a `Version`.
 
-Versions are `Equatable` and `Comparable`, fully implementing the semantics of the spec:
+`Version` is `Equatable` and `Comparable`, fully implementing the semantics of the spec:
 
 ```
  2.0.1 < 2.0.2 < 2.1.0 < 2.2.0 < 3.0.0
