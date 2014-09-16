@@ -82,8 +82,6 @@
 				7D3A7C3219C7631700346D07 /* SemverKit.h */,
 				7D3A7C3019C7631700346D07 /* Supporting Files */,
 				7D3A7C4619C7634800346D07 /* Core.swift */,
-				7D3A7C4819C763B600346D07 /* Result.swift */,
-				7D3A7C4A19C7646500346D07 /* Regex.swift */,
 				7D3A7C4E19C7827800346D07 /* Increment.swift */,
 			);
 			path = SemverKit;
@@ -92,6 +90,8 @@
 		7D3A7C3019C7631700346D07 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7D3A7C4A19C7646500346D07 /* Regex.swift */,
+				7D3A7C4819C763B600346D07 /* Result.swift */,
 				7D3A7C3119C7631700346D07 /* Info.plist */,
 			);
 			name = "Supporting Files";
