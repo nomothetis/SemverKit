@@ -3,7 +3,7 @@
 SemverKit is a pure Swift implementation of the [Semantic Versioning 2.0][semver2] specification.
 It includes a parser for version strings, as well as comparison and equality operators. As
 an extension, it also includes semantics for incrementing versions, with special support for
-alpha and beta prerelease versions.
+alpha and beta pre-release versions.
 
 ## Basic Usage
 
@@ -11,7 +11,7 @@ The first point of contact with the API is likely going to be the parser.
 
 ```swift
 let result1 = parseVersion("2.0.1-alpha.2") // { Success 2.0.1-alpha.2 }
-let result2 = parseVersion("a.0.2-alpha.3") // { Failure "String "a.0.2" could not be
+let result2 = parseVersion("a.0.2-alpha.3") // { Failure String "a.0.2" could not be
                                             //   parsed as a number in normal version: "a.0.2" }
 ```
 
