@@ -22,9 +22,7 @@ the source of the error. A successful parse contains the core type of the librar
 `Version` is `Equatable` and `Comparable`, fully implementing the semantics of the spec:
 
 ```
- 2.0.1 < 2.0.2 < 2.1.0 < 2.2.0 < 3.0.0
-   < 3.1.0-alpha.0 < 3.1.0-alpha.3 < 3.1.0-beta < 3.1.0-beta.0 < 3.1.0-beta.1
-   < 3.1.0-lexically-larger < 3.1.0
+ 2.0.1 < 2.0.2 < 2.1.0 < 2.2.0 < 3.0.0 < 3.1.0-alpha.0 < 3.1.0-alpha.3 < 3.1.0-beta < 3.1.0-beta.0 < 3.1.0-beta.1 < 3.1.0-lexically-larger < 3.1.0
 ```
 
 Of course, version metadata is fully supported, but ignored during equality and comparison
