@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D37C21019C9DF770097A26B /* IncrementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D44C4B619C8C9D70063E49F /* IncrementTests.swift */; };
+		7D37C21119C9DF780097A26B /* IncrementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D44C4B619C8C9D70063E49F /* IncrementTests.swift */; };
+		7D37C21219C9DF810097A26B /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D44C4B519C8C9D70063E49F /* CoreTests.swift */; };
+		7D37C21319C9DF830097A26B /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D44C4B519C8C9D70063E49F /* CoreTests.swift */; };
 		7D3A7C3319C7631700346D07 /* SemverKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D3A7C3219C7631700346D07 /* SemverKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7D3A7C5C19C873BE00346D07 /* SemverKit-OSX.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D3A7C5B19C873BE00346D07 /* SemverKit-OSX.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7D44C4AC19C8C82E0063E49F /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D44C4A819C8C82E0063E49F /* Core.swift */; };
@@ -17,10 +21,6 @@
 		7D44C4B119C8C82E0063E49F /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D44C4AA19C8C82E0063E49F /* Regex.swift */; };
 		7D44C4B219C8C82E0063E49F /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D44C4AB19C8C82E0063E49F /* Result.swift */; };
 		7D44C4B319C8C82E0063E49F /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D44C4AB19C8C82E0063E49F /* Result.swift */; };
-		7D44C4B719C8C9D70063E49F /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D44C4B519C8C9D70063E49F /* CoreTests.swift */; };
-		7D44C4B819C8C9D70063E49F /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D44C4B519C8C9D70063E49F /* CoreTests.swift */; };
-		7D44C4B919C8C9D70063E49F /* IncrementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D44C4B619C8C9D70063E49F /* IncrementTests.swift */; };
-		7D44C4BA19C8C9D70063E49F /* IncrementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D44C4B619C8C9D70063E49F /* IncrementTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -367,8 +367,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D44C4AC19C8C82E0063E49F /* Core.swift in Sources */,
-				7D44C4B919C8C9D70063E49F /* IncrementTests.swift in Sources */,
-				7D44C4B719C8C9D70063E49F /* CoreTests.swift in Sources */,
 				7D44C4AE19C8C82E0063E49F /* Increment.swift in Sources */,
 				7D44C4B219C8C82E0063E49F /* Result.swift in Sources */,
 				7D44C4B019C8C82E0063E49F /* Regex.swift in Sources */,
@@ -379,6 +377,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D37C21219C9DF810097A26B /* CoreTests.swift in Sources */,
+				7D37C21119C9DF780097A26B /* IncrementTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,8 +387,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D44C4AD19C8C82E0063E49F /* Core.swift in Sources */,
-				7D44C4BA19C8C9D70063E49F /* IncrementTests.swift in Sources */,
-				7D44C4B819C8C9D70063E49F /* CoreTests.swift in Sources */,
 				7D44C4AF19C8C82E0063E49F /* Increment.swift in Sources */,
 				7D44C4B319C8C82E0063E49F /* Result.swift in Sources */,
 				7D44C4B119C8C82E0063E49F /* Regex.swift in Sources */,
@@ -399,6 +397,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D37C21319C9DF830097A26B /* CoreTests.swift in Sources */,
+				7D37C21019C9DF770097A26B /* IncrementTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
