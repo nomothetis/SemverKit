@@ -25,7 +25,7 @@ class CoreTests: XCTestCase {
             // Fifth, what if there is a .- sequence?
             "5.0.0.-alpha.0", "5.0.-alpha.0", "5.-alpha.0",
             // Finally, what if there are empty components?
-            "5.0..",
+            "5.0..", ".3.1",
             
             
             // Great, normal option parsing seems to fail when expected. Now what about pre-release info?
