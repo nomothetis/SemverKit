@@ -5,6 +5,10 @@ It includes a parser for version strings, as well as comparison and equality ope
 an extension, it also includes semantics for incrementing versions, with special support for
 alpha and beta pre-release versions.
 
+SemverKit exists for both iOS and OS X, with the OS X version having an eye towards being
+useful for the creation of scripts and command-line tools. The OS X framework therefore
+includes additional functionality, such as consistent parsing of options.
+
 ## Basic Usage
 
 The first point of contact with the API is likely going to be the parser.
