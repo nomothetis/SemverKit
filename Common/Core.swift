@@ -200,7 +200,7 @@ public func ==(lhs:Version, rhs:Version) -> Bool {
     if lhs.major == rhs.major
         && lhs.minor == rhs.minor
         && lhs.patch == rhs.patch
-        && lhs.preRelease == lhs.preRelease { // per the spec, metadata is ignored.
+        && lhs.preRelease == rhs.preRelease { // per the spec, metadata is ignored.
             return true
     }
     

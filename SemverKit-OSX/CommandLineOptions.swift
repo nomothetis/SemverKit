@@ -10,7 +10,7 @@
 
 import Foundation
 
-func parseNormalizedIncrementingOptions(options:[String]) -> (Version -> () -> Version)? {
+public func parseNormalizedIncrementingOptions(options:[String]) -> (Version -> () -> Version)? {
     let relevantOptions = options.reduce((nil as Optional<VersionType>, PrereleaseType.None)) { memo, val in
         switch val {
         case "--alpha":

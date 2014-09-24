@@ -325,6 +325,49 @@ class CoreTests: XCTestCase {
         XCTAssertEqual(sortedVersions, preSortedVersions, "Versions not sorted properly!")
     }
     
+    func testVersionNonEquality() {
+        let pairs:[[String]] = [
+            ["3.0.0", "3.0.0-alpha.0"],
+            ["3.0.0", "3.0.1"],
+            ["3.0.0", "3.1.0"],
+            ["4.0.0", "3.0.0"],
+            ["3.0.0-alpha.0", "3.0.0-alpha.5"],
+            ["3.0.0-alpha.0", "3.0.0-beta.0"],
+            ["3.0.0-alpha.0", "3.0.0-boo"],
+            ["3.0.0", "3.1.1"],
+            ["3.0.0-alpha.0", "3.0.1-alpha.1"]
+        ]
+        
+        for pair in pairs {
+            let version1 = parseVersion(pair[0])+!
+            let version2 = parseVersion(pair[1])+!
+            XCTAssertNotEqual(version1, version2, "Invalid equality")
+        }
+    }
+    
+    func testVersionEquality() {
+        let pairs:[[String]] = [
+            ["3.0.0", "3.0.0"],
+            ["3.0.1", "3.0.1"],
+            ["3.1.0", "3.1.0"],
+            ["3.0.0-alpha.0", "3.0.0-alpha.0"],
+            ["3.0.0-beta.0", "3.0.0-beta.0"],
+            ["3.0.0-boo", "3.0.0-boo"],
+            ["3.0.0", "3.0.0+metadata"],
+            ["3.0.1", "3.0.1+metadata"],
+            ["3.1.0", "3.1.0+metadata"],
+            ["3.0.0-alpha.0", "3.0.0-alpha.0+metadata"],
+            ["3.0.0-beta.0", "3.0.0-beta.0+metadata"],
+            ["3.0.0-boo", "3.0.0-boo+metadata"],
+        ]
+        
+        for pair in pairs {
+            let version1 = parseVersion(pair[0])+!
+            let version2 = parseVersion(pair[1])+!
+            XCTAssertEqual(version1, version2, "Invalid equality")
+        }
+    }
+    
 }
 
 /* Of course we would never do this in production code, but this is test code, so it's alright. */
@@ -336,4 +379,9 @@ func forceUnwrap<T>(result:Result<T>) -> T {
         println("Failed to unwrap \(result)")
         abort()
     }
+}
+
+postfix operator +! {}
+postfix func +!<T>(val:Result<T>) -> T {
+    return forceUnwrap(val)
 }
