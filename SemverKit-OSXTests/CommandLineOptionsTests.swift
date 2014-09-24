@@ -30,11 +30,29 @@ class CommandLineOptionsTests: XCTestCase {
     func testValidInput() {
         let version = parseVersion("2.0.0")+!
         
-        var opts = ["--major"]
-        let incrementor = parseNormalizedIncrementingOptions(opts)!
-        var nextVersion = incrementor(version)()
-        XCTAssertEqual(version.nextMajorVersion(), nextVersion, "Invalid incrementor for options \(opts)")
-        XCTAssertNotEqual(version.nextMajorAlphaVersion(), nextVersion, "Invalid incrementor")
+        let testInputs:[([String], Version -> () -> Version)] = [
+            (["--major"], Version.nextMajorVersion),
+            (["--minor"], Version.nextMinorVersion),
+            (["--patch"], Version.nextPatchVersion),
+            (["--major", "--alpha"], Version.nextMajorAlphaVersion),
+            (["--minor", "--alpha"], Version.nextMinorAlphaVersion),
+            (["--patch", "--alpha"], Version.nextPatchAlphaVersion),
+            (["--major", "--beta"], Version.nextMajorBetaVersion),
+            (["--minor", "--beta"], Version.nextMinorBetaVersion),
+            (["--patch", "--beta"], Version.nextPatchBetaVersion),
+            (["--major", "--alpha"].reverse(), Version.nextMajorAlphaVersion),
+            (["--minor", "--alpha"].reverse(), Version.nextMinorAlphaVersion),
+            (["--patch", "--alpha"].reverse(), Version.nextPatchAlphaVersion),
+            (["--major", "--beta"].reverse(), Version.nextMajorBetaVersion),
+            (["--minor", "--beta"].reverse(), Version.nextMinorBetaVersion),
+            (["--patch", "--beta"].reverse(), Version.nextPatchBetaVersion)
+        ]
+        
+        
+        for input in testInputs {
+            let nextVersion = parseNormalizedIncrementingOptions(input.0)!(version)()
+            XCTAssertEqual(input.1(version)(), nextVersion, "Invalid incrementor for options \(input.0)")
+        }
     }
 }
 

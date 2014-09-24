@@ -59,9 +59,9 @@ func parseIncrementingOption(major:VersionType, preRelease:PrereleaseType) -> Ve
         case (VersionType.Patch, PrereleaseType.Beta):
             return Version.nextPatchBetaVersion
         case (VersionType.Major, PrereleaseType.Alpha):
-            return Version.nextMinorAlphaVersion
-        case (VersionType.Minor, PrereleaseType.Alpha):
             return Version.nextMajorAlphaVersion
+        case (VersionType.Minor, PrereleaseType.Alpha):
+            return Version.nextMinorAlphaVersion
         case (VersionType.Patch, PrereleaseType.Alpha):
             return Version.nextPatchAlphaVersion
         default:
