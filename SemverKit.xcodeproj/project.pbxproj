@@ -21,7 +21,6 @@
 		7D44C4B119C8C82E0063E49F /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D44C4AA19C8C82E0063E49F /* Regex.swift */; };
 		7D44C4B219C8C82E0063E49F /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D44C4AB19C8C82E0063E49F /* Result.swift */; };
 		7D44C4B319C8C82E0063E49F /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D44C4AB19C8C82E0063E49F /* Result.swift */; };
-		7D50B45419D2033F00743806 /* CommanLineOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D50B45319D2033F00743806 /* CommanLineOptions.swift */; };
 		7D50B45519D2041800743806 /* CommanLineOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D50B45319D2033F00743806 /* CommanLineOptions.swift */; };
 /* End PBXBuildFile section */
 
@@ -370,7 +369,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D50B45419D2033F00743806 /* CommanLineOptions.swift in Sources */,
 				7D44C4AC19C8C82E0063E49F /* Core.swift in Sources */,
 				7D44C4AE19C8C82E0063E49F /* Increment.swift in Sources */,
 				7D44C4B219C8C82E0063E49F /* Result.swift in Sources */,
