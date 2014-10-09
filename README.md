@@ -9,6 +9,29 @@ SemverKit exists for both iOS and OS X, with the OS X version having an eye towa
 useful for the creation of scripts and command-line tools. The OS X framework therefore
 includes additional functionality, such as consistent parsing of options.
 
+## Installation
+
+Minimum system requirements:
+
+* Xcode 6.1 GM Seed 2
+* OS X Mavericks 10.9.5
+
+Steps:
+
+1. Clone this github repository, and build the project.
+1. Run the tests, just for sanity. They should all pass.
+1. Copy `OptionKit.framework` from the `DerivedData` directoy to `/Library/Frameworks`
+  (this will require `sudo` access)
+
+OptionKit should now be available for use from a command line script. The shebang needs
+to read:
+
+```swift
+#!/usr/bin/env xcrun swift -F /Library/Frameworks
+```
+This is because the Swift compiler, unlike Clang, doesn't automatically pick up frameworks in
+`/Library/Frameworks`.
+
 ## Basic Usage
 
 The first point of contact with the API is likely going to be the parser.
