@@ -20,15 +20,16 @@ Steps:
 
 1. Clone this github repository, and build the project.
 1. Run the tests, just for sanity. They should all pass.
-1. Copy `OptionKit.framework` from the `DerivedData` directoy to `/Library/Frameworks`
+1. Copy `SemverKit.framework` from the `DerivedData` directoy to `/Library/Frameworks`
   (this will require `sudo` access)
 
-OptionKit should now be available for use from a command line script. The shebang needs
+SemverKit should now be available for use from a command line script. The shebang needs
 to read:
 
 ```swift
 #!/usr/bin/env xcrun swift -F /Library/Frameworks
 ```
+
 This is because the Swift compiler, unlike Clang, doesn't automatically pick up frameworks in
 `/Library/Frameworks`.
 
