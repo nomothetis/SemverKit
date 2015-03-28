@@ -28,7 +28,26 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "7D3A7C6019C873BE00346D07"
+               BuildableName = "SemverKit-OSXTests.xctest"
+               BlueprintName = "SemverKit-OSXTests"
+               ReferencedContainer = "container:SemverKit.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "7D3A7C5619C873BE00346D07"
+            BuildableName = "SemverKit.framework"
+            BlueprintName = "SemverKitOSX"
+            ReferencedContainer = "container:SemverKit.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
