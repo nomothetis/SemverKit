@@ -320,7 +320,7 @@ public func parseVersion(versionStrng:String) -> Result<Version> {
     }
     
     /* We now know that mainResultString exists. */
-    return parseNormalVersionString(normalVersionStringOptional!).flatMap{ normalVersionComponents in
+    return parseNormalVersionString(normalVersionStringOptional! as String).flatMap{ normalVersionComponents in
         
         if scanner.atEnd {
             return Result.Success(Box(val:Version(major: normalVersionComponents[0], minor: normalVersionComponents[1], patch: normalVersionComponents[2], preRelease: nil)))
@@ -357,7 +357,7 @@ public func parseVersion(versionStrng:String) -> Result<Version> {
         }
         
         /* We have a pre-release string. Parse it. */
-        return parsePreReleaseInfo(preReleaseInfo!).flatMap { parsedInfo in
+        return parsePreReleaseInfo(preReleaseInfo! as String).flatMap { parsedInfo in
             if scanner.atEnd {
                 return Result.Success(Box(val:Version(major: normalVersionComponents[0], minor: normalVersionComponents[1], patch: normalVersionComponents[2], preRelease:parsedInfo)))
             }
@@ -434,8 +434,8 @@ func parseMetadata(metadata:String) -> Result<String> {
  :param: str the string
  :return: the integer, if possible.
 */
-public func intFromString(str:NSString) -> Int? {
-    let int = str.integerValue
+public func intFromString(str:String) -> Int? {
+    let int = (str as NSString).integerValue
     if int < 0 || ((int == 0) && !(str =~ /"^0+$")) {
         return nil
     }

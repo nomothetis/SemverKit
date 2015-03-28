@@ -38,6 +38,6 @@ prefix func /(pattern:String) -> NSRegularExpression {
  */
 infix operator =~ {}
 func =~(string: String, regex: NSRegularExpression) -> Bool {
-    let matches = regex.numberOfMatchesInString(string, options: nil, range: NSMakeRange(0, countElements(string)))
+    let matches = regex.numberOfMatchesInString(string, options: nil, range: NSMakeRange(0, count(string)))
     return matches > 0
 }
