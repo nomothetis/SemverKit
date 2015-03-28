@@ -19,10 +19,11 @@
 		7D44C4AF19C8C82E0063E49F /* Increment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D44C4A919C8C82E0063E49F /* Increment.swift */; };
 		7D44C4B019C8C82E0063E49F /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D44C4AA19C8C82E0063E49F /* Regex.swift */; };
 		7D44C4B119C8C82E0063E49F /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D44C4AA19C8C82E0063E49F /* Regex.swift */; };
-		7D44C4B219C8C82E0063E49F /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D44C4AB19C8C82E0063E49F /* Result.swift */; };
-		7D44C4B319C8C82E0063E49F /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D44C4AB19C8C82E0063E49F /* Result.swift */; };
 		7D50B46019D35F6200743806 /* CommandLineOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D50B45F19D35F6200743806 /* CommandLineOptions.swift */; };
 		7D50B46219D35F9E00743806 /* CommandLineOptionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D50B46119D35F9E00743806 /* CommandLineOptionsTests.swift */; };
+		7DE0978C1AC7546E0099D99C /* LlamaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DE0978B1AC7546E0099D99C /* LlamaKit.framework */; };
+		7DE0978D1AC756720099D99C /* LlamaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DE0978B1AC7546E0099D99C /* LlamaKit.framework */; };
+		7DE0978F1AC757AE0099D99C /* LlamaKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 7DE0978B1AC7546E0099D99C /* LlamaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,20 @@
 			remoteInfo = SemverKit;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		7DE0978E1AC757A00099D99C /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				7DE0978F1AC757AE0099D99C /* LlamaKit.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7D3A7C2D19C7631700346D07 /* SemverKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SemverKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,11 +64,11 @@
 		7D44C4A819C8C82E0063E49F /* Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 		7D44C4A919C8C82E0063E49F /* Increment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Increment.swift; sourceTree = "<group>"; };
 		7D44C4AA19C8C82E0063E49F /* Regex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
-		7D44C4AB19C8C82E0063E49F /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		7D44C4B519C8C9D70063E49F /* CoreTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreTests.swift; sourceTree = "<group>"; };
 		7D44C4B619C8C9D70063E49F /* IncrementTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IncrementTests.swift; sourceTree = "<group>"; };
 		7D50B45F19D35F6200743806 /* CommandLineOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandLineOptions.swift; sourceTree = "<group>"; };
 		7D50B46119D35F9E00743806 /* CommandLineOptionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandLineOptionsTests.swift; sourceTree = "<group>"; };
+		7DE0978B1AC7546E0099D99C /* LlamaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LlamaKit.framework; path = Carthage/Build/iOS/LlamaKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DE0978C1AC7546E0099D99C /* LlamaKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DE0978D1AC756720099D99C /* LlamaKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +108,7 @@
 		7D3A7C2319C7631600346D07 = {
 			isa = PBXGroup;
 			children = (
+				7DE0978B1AC7546E0099D99C /* LlamaKit.framework */,
 				7D44C4A719C8C6420063E49F /* Common */,
 				7D44C4B419C8C9550063E49F /* CommonTests */,
 				7D3A7C2F19C7631700346D07 /* SemverKit */,
@@ -186,7 +204,6 @@
 				7D44C4A819C8C82E0063E49F /* Core.swift */,
 				7D44C4A919C8C82E0063E49F /* Increment.swift */,
 				7D44C4AA19C8C82E0063E49F /* Regex.swift */,
-				7D44C4AB19C8C82E0063E49F /* Result.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -247,6 +264,7 @@
 				7D3A7C3419C7631700346D07 /* Sources */,
 				7D3A7C3519C7631700346D07 /* Frameworks */,
 				7D3A7C3619C7631700346D07 /* Resources */,
+				7DE0978E1AC757A00099D99C /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -374,7 +392,6 @@
 			files = (
 				7D44C4AC19C8C82E0063E49F /* Core.swift in Sources */,
 				7D44C4AE19C8C82E0063E49F /* Increment.swift in Sources */,
-				7D44C4B219C8C82E0063E49F /* Result.swift in Sources */,
 				7D44C4B019C8C82E0063E49F /* Regex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,7 +412,6 @@
 				7D50B46019D35F6200743806 /* CommandLineOptions.swift in Sources */,
 				7D44C4AD19C8C82E0063E49F /* Core.swift in Sources */,
 				7D44C4AF19C8C82E0063E49F /* Increment.swift in Sources */,
-				7D44C4B319C8C82E0063E49F /* Result.swift in Sources */,
 				7D44C4B119C8C82E0063E49F /* Regex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -518,6 +534,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SemverKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -535,6 +555,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = SemverKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -549,6 +573,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -566,6 +591,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = SemverKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

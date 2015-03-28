@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import LlamaKit
 import SemverKit
 
 class CoreTests: XCTestCase {
@@ -57,7 +58,7 @@ class CoreTests: XCTestCase {
         var str = "2.1.0"
         switch parseVersion(str) {
         case .Success(let box):
-            let version = box.value
+            let version = box.unbox
             XCTAssertEqual(version.major, 2, "Incorrect major version for version string \"\(str)\".")
             XCTAssertEqual(version.minor, 1, "Incorrect minor version for version string \"\(str)\".")
             XCTAssertEqual(version.patch, 0, "Incorrect patch version for version string \"\(str)\".")
@@ -72,7 +73,7 @@ class CoreTests: XCTestCase {
         str = "2900.1023456.23475323"
         switch parseVersion(str) {
         case .Success(let box):
-            let version = box.value
+            let version = box.unbox
             XCTAssertEqual(version.major, 2900, "Incorrect major version for version string \"\(str)\".")
             XCTAssertEqual(version.minor, 1023456, "Incorrect minor version for version string \"\(str)\".")
             XCTAssertEqual(version.patch, 23475323, "Incorrect patch version for version string \"\(str)\".")
@@ -87,7 +88,7 @@ class CoreTests: XCTestCase {
         str = "1.0.0-alpha"
         switch parseVersion(str) {
         case .Success(let box):
-            let version = box.value
+            let version = box.unbox
             XCTAssertEqual(version.major, 1, "Incorrect major version for version string \"\(str)\".")
             XCTAssertEqual(version.minor, 0, "Incorrect minor version for version string \"\(str)\".")
             XCTAssertEqual(version.patch, 0, "Incorrect patch version for version string \"\(str)\".")
@@ -102,7 +103,7 @@ class CoreTests: XCTestCase {
         str = "1.0.0-alpha.1"
         switch parseVersion(str) {
         case .Success(let box):
-            let version = box.value
+            let version = box.unbox
             XCTAssertEqual(version.major, 1, "Incorrect major version for version string \"\(str)\".")
             XCTAssertEqual(version.minor, 0, "Incorrect minor version for version string \"\(str)\".")
             XCTAssertEqual(version.patch, 0, "Incorrect patch version for version string \"\(str)\".")
@@ -116,7 +117,7 @@ class CoreTests: XCTestCase {
         str = "1.0.0-0.3.7"
         switch parseVersion(str) {
         case .Success(let box):
-            let version = box.value
+            let version = box.unbox
             XCTAssertEqual(version.major, 1, "Incorrect major version for version string \"\(str)\".")
             XCTAssertEqual(version.minor, 0, "Incorrect minor version for version string \"\(str)\".")
             XCTAssertEqual(version.patch, 0, "Incorrect patch version for version string \"\(str)\".")
@@ -130,7 +131,7 @@ class CoreTests: XCTestCase {
         str = "1.0.0-x.7.z.92"
         switch parseVersion(str) {
         case .Success(let box):
-            let version = box.value
+            let version = box.unbox
             XCTAssertEqual(version.major, 1, "Incorrect major version for version string \"\(str)\".")
             XCTAssertEqual(version.minor, 0, "Incorrect minor version for version string \"\(str)\".")
             XCTAssertEqual(version.patch, 0, "Incorrect patch version for version string \"\(str)\".")
@@ -145,7 +146,7 @@ class CoreTests: XCTestCase {
         str = "1.0.0-x.7.secret-alpha.92"
         switch parseVersion(str) {
         case .Success(let box):
-            let version = box.value
+            let version = box.unbox
             XCTAssertEqual(version.major, 1, "Incorrect major version for version string \"\(str)\".")
             XCTAssertEqual(version.minor, 0, "Incorrect minor version for version string \"\(str)\".")
             XCTAssertEqual(version.patch, 0, "Incorrect patch version for version string \"\(str)\".")
@@ -159,7 +160,7 @@ class CoreTests: XCTestCase {
         str = "1.0.0-x.7.secret-alpha.92"
         switch parseVersion(str) {
         case .Success(let box):
-            let version = box.value
+            let version = box.unbox
             XCTAssertEqual(version.major, 1, "Incorrect major version for version string \"\(str)\".")
             XCTAssertEqual(version.minor, 0, "Incorrect minor version for version string \"\(str)\".")
             XCTAssertEqual(version.patch, 0, "Incorrect patch version for version string \"\(str)\".")
@@ -173,7 +174,7 @@ class CoreTests: XCTestCase {
         str = "1.0.0-alpha.-1"
         switch parseVersion(str) {
         case .Success(let box):
-            let version = box.value
+            let version = box.unbox
             XCTAssertEqual(version.major, 1, "Incorrect major version for version string \"\(str)\".")
             XCTAssertEqual(version.minor, 0, "Incorrect minor version for version string \"\(str)\".")
             XCTAssertEqual(version.patch, 0, "Incorrect patch version for version string \"\(str)\".")
@@ -187,7 +188,7 @@ class CoreTests: XCTestCase {
         str = "1.0.0--alpha.1"
         switch parseVersion(str) {
         case .Success(let box):
-            let version = box.value
+            let version = box.unbox
             XCTAssertEqual(version.major, 1, "Incorrect major version for version string \"\(str)\".")
             XCTAssertEqual(version.minor, 0, "Incorrect minor version for version string \"\(str)\".")
             XCTAssertEqual(version.patch, 0, "Incorrect patch version for version string \"\(str)\".")
@@ -203,7 +204,7 @@ class CoreTests: XCTestCase {
         str = "1.0.0+x.7.ver92"
         switch parseVersion(str) {
         case .Success(let box):
-            let version = box.value
+            let version = box.unbox
             XCTAssertEqual(version.major, 1, "Incorrect major version for version string \"\(str)\".")
             XCTAssertEqual(version.minor, 0, "Incorrect minor version for version string \"\(str)\".")
             XCTAssertEqual(version.patch, 0, "Incorrect patch version for version string \"\(str)\".")
@@ -218,7 +219,7 @@ class CoreTests: XCTestCase {
         str = "1.0.0-alpha.13+x.7.ver92"
         switch parseVersion(str) {
         case .Success(let box):
-            let version = box.value
+            let version = box.unbox
             XCTAssertEqual(version.major, 1, "Incorrect major version for version string \"\(str)\".")
             XCTAssertEqual(version.minor, 0, "Incorrect minor version for version string \"\(str)\".")
             XCTAssertEqual(version.patch, 0, "Incorrect patch version for version string \"\(str)\".")
@@ -234,7 +235,7 @@ class CoreTests: XCTestCase {
         str = "1.0.0-alpha.13+-x.7.ver92"
         switch parseVersion(str) {
         case .Success(let box):
-            let version = box.value
+            let version = box.unbox
             XCTAssertEqual(version.major, 1, "Incorrect major version for version string \"\(str)\".")
             XCTAssertEqual(version.minor, 0, "Incorrect minor version for version string \"\(str)\".")
             XCTAssertEqual(version.patch, 0, "Incorrect patch version for version string \"\(str)\".")
@@ -371,10 +372,10 @@ class CoreTests: XCTestCase {
 }
 
 /* Of course we would never do this in production code, but this is test code, so it's alright. */
-func forceUnwrap<T>(result:Result<T>) -> T {
+func forceUnwrap<T, E>(result:Result<T, E>) -> T {
     switch result {
     case .Success(let box):
-        return box.value
+        return box.unbox
     case .Failure(let err):
         println("Failed to unwrap \(result)")
         abort()
@@ -382,6 +383,6 @@ func forceUnwrap<T>(result:Result<T>) -> T {
 }
 
 postfix operator +! {}
-postfix func +!<T>(val:Result<T>) -> T {
+postfix func +!<T, E>(val:Result<T, E>) -> T {
     return forceUnwrap(val)
 }
