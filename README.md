@@ -55,7 +55,7 @@ This allows for precise semantics, which makes SemverKit suitable for automated 
 
 Minimum system requirements:
 
-* Xcode 6.3 β2
+* Xcode 6.3 β4
 * OS X Mavericks 10.10
 
 Steps:
