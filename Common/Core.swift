@@ -45,7 +45,7 @@ public struct Version : Printable, Comparable {
         case Number(Int)
         case String(Swift.String)
 
-        public init(string: Swift.String) {
+        public init(_ string: Swift.String) {
             if let number = intFromString(string) {
                 self = .Number(number)
             } else {
@@ -66,7 +66,7 @@ public struct Version : Printable, Comparable {
     public enum PreReleaseInfo : Printable, Comparable, DebugPrintable {
         case Alpha(Int)
         case Beta(Int)
-        case Arbitrary([String])
+        case Arbitrary([PreReleaseIdentifier])
         case None
         
         static func fromArray(arr:[String]) -> PreReleaseInfo {
@@ -81,25 +81,26 @@ public struct Version : Printable, Comparable {
                 case "beta":
                     return .Beta(-1)
                 default:
-                    return .Arbitrary(arr)
+                    break
                 }
-            }
-            
-            if (arr.count == 2) {
-                let tuple = (arr[0], intFromString(arr[1]))
-                switch tuple {
-                case ("alpha", let x) where x != nil:
-                    return .Alpha(x!)
-                case ("beta", let x) where x != nil:
-                    return .Beta(x!)
+            } else if (arr.count == 2) {
+                switch (arr[0], intFromString(arr[1])) {
+                case ("alpha", let .Some(x)):
+                    return .Alpha(x)
+                case ("beta", let .Some(x)):
+                    return .Beta(x)
                 default:
                     break
                 }
             }
             
-            return PreReleaseInfo.Arbitrary(arr)
+            return .arbitrary(arr)
         }
-        
+
+        public static func arbitrary(arr:[String]) -> PreReleaseInfo {
+            return .Arbitrary(arr.map { PreReleaseIdentifier($0) })
+        }
+
         public var description:String {
             get {
                 switch self {
@@ -112,8 +113,7 @@ public struct Version : Printable, Comparable {
                 case .Beta(let rev):
                     return "beta.\(rev)"
                 case .Arbitrary(let info):
-                    let joiner = "."
-                    return "\((info as NSArray).componentsJoinedByString(joiner))"
+                    return join(".", info.map { $0.description })
                 case .None:
                     return ""
                 }
@@ -133,26 +133,26 @@ public struct Version : Printable, Comparable {
                     return "{ Beta \(rev) }"
                 case .Arbitrary(let info):
                     let joiner = "."
-                    return "{ Arbitrary \((info as NSArray).componentsJoinedByString(joiner)) }"
+                    return "{ Arbitrary \(join(joiner, info.map { $0.description })) }"
                 case .None:
                     return "{ None }"
                 }
             }
         }
-        
-        public func toArray() -> [String] {
+
+        public func toArray() -> [PreReleaseIdentifier] {
             switch self {
             case .Alpha(let int):
                 if (int >= 0) {
-                    return ["alpha", String(int)]
+                    return [.String("alpha"), .Number(int)]
                 } else {
-                    return ["alpha"]
+                    return [.String("alpha")]
                 }
             case .Beta(let int):
                 if (int >= 0) {
-                    return ["beta", String(int)]
+                    return [.String("beta"), .Number(int)]
                 } else {
-                    return ["beta"]
+                    return [.String("beta")]
                 }
             case .Arbitrary(let arr):
                 return arr

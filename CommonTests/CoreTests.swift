@@ -121,7 +121,7 @@ class CoreTests: XCTestCase {
             XCTAssertEqual(version.major, 1, "Incorrect major version for version string \"\(str)\".")
             XCTAssertEqual(version.minor, 0, "Incorrect minor version for version string \"\(str)\".")
             XCTAssertEqual(version.patch, 0, "Incorrect patch version for version string \"\(str)\".")
-            XCTAssertEqual(version.preRelease, Version.PreReleaseInfo.Arbitrary(["0", "3", "7"]), "Incorrect pre-release info for version string \"\(str)\".")
+            XCTAssertEqual(version.preRelease, Version.PreReleaseInfo.arbitrary(["0", "3", "7"]), "Incorrect pre-release info for version string \"\(str)\".")
             XCTAssertNil(version.metadata, "Unexpected metadata for version string \"\(str)\"")
             XCTAssertEqual(version.description, "1.0.0-0.3.7", "Unexpected description for version.")
         case .Failure(let err):
@@ -135,7 +135,7 @@ class CoreTests: XCTestCase {
             XCTAssertEqual(version.major, 1, "Incorrect major version for version string \"\(str)\".")
             XCTAssertEqual(version.minor, 0, "Incorrect minor version for version string \"\(str)\".")
             XCTAssertEqual(version.patch, 0, "Incorrect patch version for version string \"\(str)\".")
-            XCTAssertEqual(version.preRelease, Version.PreReleaseInfo.Arbitrary(["x", "7", "z", "92"]), "Incorrect pre-release info for version string \"\(str)\".")
+            XCTAssertEqual(version.preRelease, Version.PreReleaseInfo.arbitrary(["x", "7", "z", "92"]), "Incorrect pre-release info for version string \"\(str)\".")
             XCTAssertNil(version.metadata, "Unexpected metadata for version string \"\(str)\"")
             XCTAssertEqual(version.description, "1.0.0-x.7.z.92", "Unexpected description for version.")
         case .Failure(let err):
@@ -150,7 +150,7 @@ class CoreTests: XCTestCase {
             XCTAssertEqual(version.major, 1, "Incorrect major version for version string \"\(str)\".")
             XCTAssertEqual(version.minor, 0, "Incorrect minor version for version string \"\(str)\".")
             XCTAssertEqual(version.patch, 0, "Incorrect patch version for version string \"\(str)\".")
-            XCTAssertEqual(version.preRelease, Version.PreReleaseInfo.Arbitrary(["x", "7", "secret-alpha", "92"]), "Incorrect pre-release info for version string \"\(str)\".")
+            XCTAssertEqual(version.preRelease, Version.PreReleaseInfo.arbitrary(["x", "7", "secret-alpha", "92"]), "Incorrect pre-release info for version string \"\(str)\".")
             XCTAssertNil(version.metadata, "Unexpected metadata for version string \"\(str)\"")
             XCTAssertEqual(version.description, "1.0.0-x.7.secret-alpha.92", "Unexpected description for version.")
         case .Failure(let err):
@@ -164,7 +164,7 @@ class CoreTests: XCTestCase {
             XCTAssertEqual(version.major, 1, "Incorrect major version for version string \"\(str)\".")
             XCTAssertEqual(version.minor, 0, "Incorrect minor version for version string \"\(str)\".")
             XCTAssertEqual(version.patch, 0, "Incorrect patch version for version string \"\(str)\".")
-            XCTAssertEqual(version.preRelease, Version.PreReleaseInfo.Arbitrary(["x", "7", "secret-alpha", "92"]), "Incorrect pre-release info for version string \"\(str)\".")
+            XCTAssertEqual(version.preRelease, Version.PreReleaseInfo.arbitrary(["x", "7", "secret-alpha", "92"]), "Incorrect pre-release info for version string \"\(str)\".")
             XCTAssertNil(version.metadata, "Unexpected metadata for version string \"\(str)\"")
             XCTAssertEqual(version.description, "1.0.0-x.7.secret-alpha.92", "Unexpected description for version.")
         case .Failure(let err):
@@ -178,7 +178,7 @@ class CoreTests: XCTestCase {
             XCTAssertEqual(version.major, 1, "Incorrect major version for version string \"\(str)\".")
             XCTAssertEqual(version.minor, 0, "Incorrect minor version for version string \"\(str)\".")
             XCTAssertEqual(version.patch, 0, "Incorrect patch version for version string \"\(str)\".")
-            XCTAssertEqual(version.preRelease, Version.PreReleaseInfo.Arbitrary(["alpha", "-1"]), "Incorrect pre-release info for version string \"\(str)\".")
+            XCTAssertEqual(version.preRelease, Version.PreReleaseInfo.arbitrary(["alpha", "-1"]), "Incorrect pre-release info for version string \"\(str)\".")
             XCTAssertNil(version.metadata, "Unexpected metadata for version string \"\(str)\"")
             XCTAssertEqual(version.description, "1.0.0-alpha.-1", "Unexpected description for version.")
         case .Failure(let err):
@@ -192,7 +192,7 @@ class CoreTests: XCTestCase {
             XCTAssertEqual(version.major, 1, "Incorrect major version for version string \"\(str)\".")
             XCTAssertEqual(version.minor, 0, "Incorrect minor version for version string \"\(str)\".")
             XCTAssertEqual(version.patch, 0, "Incorrect patch version for version string \"\(str)\".")
-            XCTAssertEqual(version.preRelease, Version.PreReleaseInfo.Arbitrary(["-alpha", "1"]), "Incorrect pre-release info for version string \"\(str)\".")
+            XCTAssertEqual(version.preRelease, Version.PreReleaseInfo.arbitrary(["-alpha", "1"]), "Incorrect pre-release info for version string \"\(str)\".")
             XCTAssertNil(version.metadata, "Unexpected metadata for version string \"\(str)\"")
             XCTAssertEqual(version.description, "1.0.0--alpha.1", "Unexpected description for version.")
         case .Failure(let err):
