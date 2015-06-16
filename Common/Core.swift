@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import LlamaKit
+import Result
 
 /*
 Implements the the Semantic Versioning 2.0.0 spec:
@@ -365,7 +365,7 @@ public func <(lhs:Version.PreReleaseIdentifier, rhs:Version.PreReleaseIdentifier
 
 public func parseVersion(versionStrng:String) -> Result<Version, String> {
     if versionStrng.isEmpty {
-        return failure("Empty string is not a valid version.")
+        return .failure("Empty string is not a valid version.")
     }
     
     let scanner = NSScanner(string: versionStrng)
@@ -373,7 +373,7 @@ public func parseVersion(versionStrng:String) -> Result<Version, String> {
     let success = scanner.scanUpToCharactersFromSet(NSCharacterSet(charactersInString: "-+"), intoString:&normalVersionStringOptional)
     
     if (!success) {
-        return failure("Unable to get main version from passed version string: \(versionStrng)")
+        return .failure("Unable to get main version from passed version string: \(versionStrng)")
     }
     
     /* We now know that mainResultString exists. */
@@ -381,7 +381,7 @@ public func parseVersion(versionStrng:String) -> Result<Version, String> {
         
         if scanner.atEnd {
             let version = Version(major: normalVersionComponents[0], minor: normalVersionComponents[1], patch: normalVersionComponents[2], preRelease: nil)
-            return .Success(Box(version))
+            return .success(version)
         }
         
         /*
@@ -396,7 +396,7 @@ public func parseVersion(versionStrng:String) -> Result<Version, String> {
             /* We are not quite at end end. Whatever remains is by definition metadata. */
             let metaData = versionStrng[advance(versionStrng.startIndex,scanner.scanLocation + 1)..<versionStrng.endIndex]
             return parseMetadata(metaData).flatMap { mdata in
-                return .Success(Box(Version(major: normalVersionComponents[0], minor: normalVersionComponents[1], patch: normalVersionComponents[2], preRelease:nil, metadata: mdata)))
+                return .success(Version(major: normalVersionComponents[0], minor: normalVersionComponents[1], patch: normalVersionComponents[2], preRelease:nil, metadata: mdata))
             }
         }
         
@@ -411,19 +411,19 @@ public func parseVersion(versionStrng:String) -> Result<Version, String> {
         var preReleaseInfo:NSString? = nil
         let success = scanner.scanUpToCharactersFromSet(NSCharacterSet(charactersInString:"+"), intoString: &preReleaseInfo)
         if (!success) {
-            return failure("Unable to get pre-release info for passed string: \(versionStrng)")
+            return .failure("Unable to get pre-release info for passed string: \(versionStrng)")
         }
         
         /* We have a pre-release string. Parse it. */
         return parsePreReleaseInfo(preReleaseInfo! as String).flatMap { parsedInfo in
             if scanner.atEnd {
-                return Result.Success(Box(Version(major: normalVersionComponents[0], minor: normalVersionComponents[1], patch: normalVersionComponents[2], preRelease:parsedInfo)))
+                return .success(Version(major: normalVersionComponents[0], minor: normalVersionComponents[1], patch: normalVersionComponents[2], preRelease:parsedInfo))
             }
             
             /* We are not quite at end end. Whatever remains is by definition metadata. */
             let metaData = versionStrng[advance(versionStrng.startIndex,scanner.scanLocation + 1)..<versionStrng.endIndex]
             return parseMetadata(metaData).flatMap { mdata in
-                return .Success(Box(Version(major: normalVersionComponents[0], minor: normalVersionComponents[1], patch: normalVersionComponents[2], preRelease: parsedInfo, metadata: mdata)))
+                return .success(Version(major: normalVersionComponents[0], minor: normalVersionComponents[1], patch: normalVersionComponents[2], preRelease: parsedInfo, metadata: mdata))
             }
         }
         
@@ -450,15 +450,15 @@ func parseNormalVersionString(string:String) -> Result<[Int], String> {
         if let num = intFromString(str) {
             results += [num]
         } else {
-            return failure("String \"\(str)\" could not be parsed as a number in normal version: \"\(string)")
+            return .failure("String \"\(str)\" could not be parsed as a number in normal version: \"\(string)")
         }
     }
     
     if results.count != 3 {
-        return failure("Normal version must be in M.m.p format, where each of M, m, and p are integers. Passed normal version was: \(string)")
+        return .failure("Normal version must be in M.m.p format, where each of M, m, and p are integers. Passed normal version was: \(string)")
     }
     
-    return success(results)
+    return .success(results)
 }
 
 func parsePreReleaseInfo(info:String) -> Result<[String], String> {
@@ -467,11 +467,11 @@ func parsePreReleaseInfo(info:String) -> Result<[String], String> {
     
     for str in components {
         if !(str =~ /"^[0-9a-zA-Z\\-]+$") {
-            return failure("A component of pre-release info string \"\(info)\" is not in the required character set: [0-9a-zA-S\\-]")
+            return .failure("A component of pre-release info string \"\(info)\" is not in the required character set: [0-9a-zA-S\\-]")
         }
     }
     
-    return success(components)
+    return .success(components)
 }
 
 func parseMetadata(metadata:String) -> Result<String, String> {
@@ -479,11 +479,11 @@ func parseMetadata(metadata:String) -> Result<String, String> {
     let components = metadata.componentsSeparatedByString(".")
     for str in components {
         if !(str =~ /"^[0-9a-zA-Z\\-]+$") {
-            return failure("A component of metadata string \"\(metadata)\" is not in the required character set: [0-9a-zA-Z\\-]")
+            return .failure("A component of metadata string \"\(metadata)\" is not in the required character set: [0-9a-zA-Z\\-]")
         }
     }
     
-    return success(metadata)
+    return .success(metadata)
 }
 
 /**
